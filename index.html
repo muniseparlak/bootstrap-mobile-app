@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,200;1,6..72,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nav-bar start-->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm p-3"
+    >
+      <div class="container px-4">
+        <a class="navbar-brand fw-bold" href="#">Start Bootstrap</a>
+
+        <button
+          onclick="btnToggle()"
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="true"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span> Menü
+        </button>
+        <div
+          class="navbar-collapse collapse show"
+          id="navbarTogglerDemo01"
+          style
+        >
+          <ul class="navbar-nav ms-auto me-2 my-3 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link me-lg-3" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-lg-3" href="#">Download</a>
+            </li>
+          </ul>
+
+          <!-- Button trigger modal -->
+          <button class="btn btn-primary" id="myBtn">
+            <i class="fa-solid fa-bars"></i>
+            Send Feedback
+          </button>
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Send Feedback</h2>
+
+              <form
+                action="https://jsonplaceholder.typicode.com/"
+                method="post"
+              >
+                <input
+                  placeholder="First Name"
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  value=""
+                /><br />
+                <br />
+                <input
+                  placeholder="Last Name"
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  value=""
+                /><br />
+                <br />
+                <input
+                  placeholder="E-mail"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value=""
+                /><br />
+                <br />
+                <input
+                  placeholder="Message"
+                  type="text"
+                  id="message"
+                  name="message"
+                  value=""
+                /><br /><br />
+                <input class="submitButton" type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--Header start-->
+    <header>
+      <div class="container px-5 mt-5">
+        <div class="row gx-5 align-items-center pt-5" style="margin-top: 100px">
+          <div class="col-lg-6 mb-5">
+            <div class="mb-5 mg-lg-0 text-center text-lg-start">
+              <h1 class="showcase">Showcase your app beautifully.</h1>
+              <p>
+                Launch your mobile app landing page faster with this free, open
+                source theme from Start Bootstrap!
+              </p>
+
+              <div
+                class="buttons container d-flex justify-content-center align-items-center"
+                style="font-family: 'Rubik', sans-serif"
+              >
+                <div class="row">
+                  <button
+                    type="button"
+                    class="container btn btn-dark m-2"
+                    style="width: 45%"
+                  >
+                    <div class="row">
+                      <div class="col-4">
+                        <i class="fa-solid fa-play play-icon"></i>
+                      </div>
+                      <div class="col-8 pl-0">
+                        GET IT ON <br />
+                        <h5>Google Play</h5>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-dark m-2"
+                    style="width: 45%"
+                  >
+                    <div class="row">
+                      <div class="col-4">
+                        <i class="fa-brands fa-apple apple-icon"></i>
+                      </div>
+                      <div class="col-8 pl-0" style="font-size: 10px">
+                        Download on the <br />
+                        <h5>App Store</h5>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="device">
+              <div class="wallpaper d-sm-block">
+                <img src="download-2.jpg" alt="" class="wallpaper" />
+              </div>
+              <div class="z-1">
+                <img
+                  src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/phone-screen.png"
+                  alt="mobile"
+                  class="mobile img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--Aside start-->
+
+    <aside class="text-center">
+      <div class="container px-5">
+        <div class="row d-flex gx-5 text-center justify-content-center">
+          <div class="col-xl-8 mb-4">
+            <div class="text-white h2 mb-4 pt-5">
+              "An intuitive solution to a common problem that we all face,
+              wrapped up in a single app!"
+            </div>
+            <img src="images-1.jpg" alt="TNW" style="height: 3rem" />
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!--Section start-->
+
+    <section>
+      <div class="container px-5">
+        <div class="row gx-5 d-flex flex-wrap">
+          <div class="col-lg-4 order-lg-0 order-sm-1 mt-5 sectionDevice">
+            <div class="wallpaper d-sm-none d-md-block">
+              <img src="download-2.jpg" alt="" class="sectionWallpaper" />
+            </div>
+            <img
+              src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/phone-screen.png"
+              alt="mobile"
+              class="mobile"
+            />
+          </div>
+
+          <div class="col-lg-8 order-lg-1 order-md-0 mt-5">
+            <div class="container-fluid">
+              <div class="row gx-5">
+                <div class="col-md-6 mb-5">
+                  <div class="text-center">
+                    <i class="icon-feature fa-solid fa-mobile-screen mb-4"></i>
+                    <h3>Device Mockups</h3>
+                    <p>
+                      Ready to use HTML/CSS device mockups, no Photoshop
+                      required!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                  <div class="text-center">
+                    <i class="icon-feature fa-solid fa-camera mb-4"></i>
+                    <h3>Flexible Use</h3>
+                    <p>
+                      Put an image, video, animation, or anything else in the
+                      screen!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row gx-5">
+                <div class="col-md-6 mb-5">
+                  <div class="text-center">
+                    <i class="icon-feature fa-solid fa-gift mb-4"></i>
+                    <h3>Free to Use</h3>
+                    <p>
+                      As always, this theme is free to download and use for any
+                      purpose!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                  <div class="text-center">
+                    <i class="icon-feature fa-regular fa-circle-check mb-4"></i>
+                    <h3>Open Source</h3>
+                    <p>
+                      Since this theme is MIT licensed, you can use it
+                      commercially!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section-2 start-->
+
+    <section class="bg-light">
+      <div class="container gx-5">
+        <div class="row">
+          <div class="col-12 col-lg-5 text-lg-start mt-5">
+            <h2 class="mb-4 mt-5" style="font-size: 3rem">
+              Enter a new age of web design
+            </h2>
+            <p class="fw-normal">
+              This section is perfect for featuring some information about your
+              application, why it was built, the problem it solves, or anything
+              else! There's plenty of space for text here, so don't worry about
+              writing too much.
+            </p>
+          </div>
+          <div class="col-sm-8 col-md-6">
+            <div class="p-5">
+              <img
+                class="img-fluid rounded-circle"
+                src="https://source.unsplash.com/u8Jn2rzYIps/900x900"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section-3 start-->
+
+    <section class="cta">
+      <div class="wrapper px-5 pt-5 position-relative">
+        <img
+          class="image"
+          src="https://source.unsplash.com/5g41N3uRPf8/1500x800"
+          alt=""
+        />
+        <div class="darkness">
+          <div class="row">
+            <div class="col-4" style="padding-top: 180px; padding-left: 50px">
+              <div class="d-flex flex-column justify-content-center">
+                <h2 class="mb-4 text-white" style="font-size: 3rem">
+                  Stop waiting. <br />
+                  Start building
+                </h2>
+                <button
+                  type="button"
+                  class="btn btn-outline-light text-white py-3 px-1 rounded-pill mb-4"
+                >
+                  Download for free
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section-4 start-->
+
+    <section class="content text-center">
+      <div class="container">
+        <div class="row d-flex gx-5 text-center justify-content-center">
+          <div class="col-xl-8 mb-4">
+            <div class="text-white h2 mb-4 pt-5">Get the app now!</div>
+            <div
+              class="buttons d-flex flex-column flex-lg-row justify-content-center align-items-center"
+              style="font-family: 'Rubik', sans-serif"
+            >
+              <button type="button" class="container btn btn-dark p-1 m-2">
+                <div class="row">
+                  <div class="col-4">
+                    <i class="fa-solid fa-play play-icon"></i>
+                  </div>
+                  <div class="col-8 pl-0">
+                    GET IT ON <br />
+                    <h5>Google Play</h5>
+                  </div>
+                </div>
+              </button>
+
+              <button type="button" class="btn btn-dark m-2">
+                <div class="row">
+                  <div class="col-4">
+                    <i class="fa-brands fa-apple apple-icon"></i>
+                  </div>
+                  <div class="col-8 pl-0" style="font-size: 12px">
+                    Download on the <br />
+                    <h5>App Store</h5>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer start-->
+
+    <footer class="bg-dark">
+      <div class="container">
+        <div
+          class="row d-flex text-center justify-content-center align-items-center pt-5"
+        >
+          <div class="col-xl-8">
+            <div style="color: #808080">Munise Parlak Zeren</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
