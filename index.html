@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,11 +16,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link
       rel="stylesheet"
@@ -30,9 +28,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
-    <link rel="stylesheet" href="style.css" />
 
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -41,26 +38,21 @@
       class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm p-3"
     >
       <div class="container px-4">
-        <a class="navbar-brand fw-bold" href="#">Start Bootstrap</a>
+        <a class="navbar-brand fw-bold px-5" href="#">Start Bootstrap</a>
 
         <button
-          onclick="btnToggle()"
-          class="navbar-toggler"
+          class="navbar-toggler collapsed"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="true"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span> Menü
         </button>
-        <div
-          class="navbar-collapse collapse show"
-          id="navbarTogglerDemo01"
-          style
-        >
-          <ul class="navbar-nav ms-auto me-2 my-3 mb-lg-0">
+        <div class="navbar-collapse collapse" id="navbarResponsive" style>
+          <ul class="navbar-nav ms-auto me-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link me-lg-3" href="#">Features</a>
             </li>
@@ -70,60 +62,92 @@
           </ul>
 
           <!-- Button trigger modal -->
-          <button class="btn btn-primary" id="myBtn">
+          <button
+            type="button"
+            class="btn btn-primary px-3 mb-lg-0 rounded-pill"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
             <i class="fa-solid fa-bars"></i>
             Send Feedback
           </button>
-
-          <!-- The Modal -->
-          <div id="myModal" class="modal">
-            <!-- Modal -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2>Send Feedback</h2>
-
-              <form
-                action="https://jsonplaceholder.typicode.com/"
-                method="post"
-              >
-                <input
-                  placeholder="First Name"
-                  type="text"
-                  id="fname"
-                  name="fname"
-                  value=""
-                /><br />
-                <br />
-                <input
-                  placeholder="Last Name"
-                  type="text"
-                  id="lname"
-                  name="lname"
-                  value=""
-                /><br />
-                <br />
-                <input
-                  placeholder="E-mail"
-                  type="email"
-                  id="email"
-                  name="email"
-                  value=""
-                /><br />
-                <br />
-                <input
-                  placeholder="Message"
-                  type="text"
-                  id="message"
-                  name="message"
-                  value=""
-                /><br /><br />
-                <input class="submitButton" type="submit" value="Submit" />
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </nav>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      style="display: none"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel">Send Feedback</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="https://jsonplaceholder.typicode.com/" method="post">
+              <div class="mb-3">
+                <input
+                  class="form-control p-3"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="İsim Soyisim"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  class="form-control p-3"
+                  type="text"
+                  id="e-mail"
+                  name="e-mail"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  class="form-control p-3"
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Telefon numarası"
+                  required
+                />
+              </div>
+              <div>
+                <textarea
+                  class="form-control p-3"
+                  cols="30"
+                  rows="7"
+                  id="message"
+                  placeholder="Mesajınız"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer d-grid col-11 mx-auto mb-3">
+            <button class="btn btn-lg submitButton" type="button">
+              Gönder
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--Header start-->
     <header>
@@ -138,50 +162,34 @@
               </p>
 
               <div
-                class="buttons container d-flex justify-content-center align-items-center"
+                class="d-flex flex-column flex-lg-row align-items-center"
                 style="font-family: 'Rubik', sans-serif"
               >
-                <div class="row">
-                  <button
-                    type="button"
-                    class="container btn btn-dark m-2"
-                    style="width: 45%"
-                  >
-                    <div class="row">
-                      <div class="col-4">
-                        <i class="fa-solid fa-play play-icon"></i>
-                      </div>
-                      <div class="col-8 pl-0">
-                        GET IT ON <br />
-                        <h5>Google Play</h5>
-                      </div>
-                    </div>
-                  </button>
-
-                  <button
-                    type="button"
-                    class="btn btn-dark m-2"
-                    style="width: 45%"
-                  >
-                    <div class="row">
-                      <div class="col-4">
-                        <i class="fa-brands fa-apple apple-icon"></i>
-                      </div>
-                      <div class="col-8 pl-0" style="font-size: 10px">
-                        Download on the <br />
-                        <h5>App Store</h5>
-                      </div>
-                    </div>
-                  </button>
-                </div>
+                <a href="#!" class="me-lg-3 mb-4 mb-lg-0">
+                  <img
+                    class="app-badge"
+                    src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/google-play-badge.svg"
+                    alt=""
+                  />
+                </a>
+                <a href="#!" class="me-lg-3 mb-4 mb-lg-0">
+                  <img
+                    class="app-badge"
+                    src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/app-store-badge.svg"
+                    alt=""
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="device">
-              <div class="wallpaper d-sm-block">
-                <img src="download-2.jpg" alt="" class="wallpaper" />
+              <div class="wallpaper d-none d-sm-block">
+                <img src="images/download-2.jpg" alt="" class="wallpaper" />
               </div>
+              <svg class="pinksvg d-none d-sm-block" height="30" width="30">
+                <circle cx="15" cy="15" r="10" stroke-width="3" fill="pink" />
+              </svg>
               <div class="z-1">
                 <img
                   src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/phone-screen.png"
@@ -190,6 +198,9 @@
                 />
               </div>
             </div>
+            <svg class="d-none d-sm-block" height="30" width="30">
+              <circle cx="15" cy="15" r="10" stroke-width="3" fill="blue" />
+            </svg>
           </div>
         </div>
       </div>
@@ -205,7 +216,11 @@
               "An intuitive solution to a common problem that we all face,
               wrapped up in a single app!"
             </div>
-            <img src="images-1.jpg" alt="TNW" style="height: 3rem" />
+            <img
+              src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/tnw-logo.svg"
+              alt="TNW"
+              style="height: 3rem"
+            />
           </div>
         </div>
       </div>
@@ -217,8 +232,8 @@
       <div class="container px-5">
         <div class="row gx-5 d-flex flex-wrap">
           <div class="col-lg-4 order-lg-0 order-sm-1 mt-5 sectionDevice">
-            <div class="wallpaper d-sm-none d-md-block">
-              <img src="download-2.jpg" alt="" class="sectionWallpaper" />
+            <div class="wallpaper d-none d-md-block">
+              <img src="images/download-2.jpg" alt="" class="sectionWallpaper" />
             </div>
             <img
               src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/phone-screen.png"
@@ -282,10 +297,10 @@
     <!--Section-2 start-->
 
     <section class="bg-light">
-      <div class="container gx-5">
-        <div class="row">
-          <div class="col-12 col-lg-5 text-lg-start mt-5">
-            <h2 class="mb-4 mt-5" style="font-size: 3rem">
+      <div class="container px-5">
+        <div class="row gx-5 justify-content-center align-items-center">
+          <div class="col-12 col-lg-5">
+            <h2 class="display-4 mb-4" style="font-size: 3rem">
               Enter a new age of web design
             </h2>
             <p class="fw-normal">
@@ -296,7 +311,7 @@
             </p>
           </div>
           <div class="col-sm-8 col-md-6">
-            <div class="p-5">
+            <div class="p-5 px-sm-0 d-flex justify-content-center">
               <img
                 class="img-fluid rounded-circle"
                 src="https://source.unsplash.com/u8Jn2rzYIps/900x900"
@@ -341,39 +356,26 @@
     <!--Section-4 start-->
 
     <section class="content text-center">
-      <div class="container">
-        <div class="row d-flex gx-5 text-center justify-content-center">
-          <div class="col-xl-8 mb-4">
-            <div class="text-white h2 mb-4 pt-5">Get the app now!</div>
-            <div
-              class="buttons d-flex flex-column flex-lg-row justify-content-center align-items-center"
-              style="font-family: 'Rubik', sans-serif"
-            >
-              <button type="button" class="container btn btn-dark p-1 m-2">
-                <div class="row">
-                  <div class="col-4">
-                    <i class="fa-solid fa-play play-icon"></i>
-                  </div>
-                  <div class="col-8 pl-0">
-                    GET IT ON <br />
-                    <h5>Google Play</h5>
-                  </div>
-                </div>
-              </button>
-
-              <button type="button" class="btn btn-dark m-2">
-                <div class="row">
-                  <div class="col-4">
-                    <i class="fa-brands fa-apple apple-icon"></i>
-                  </div>
-                  <div class="col-8 pl-0" style="font-size: 12px">
-                    Download on the <br />
-                    <h5>App Store</h5>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
+      <div class="container p-5">
+        <h2 class="text-center text-white mb-4">Get the app now!</h2>
+        <div
+          class="d-flex flex-column flex-lg-row align-items-center justify-content-center"
+          style="font-family: 'Rubik', sans-serif"
+        >
+          <a href="#!" class="me-lg-3 mb-4 mb-lg-0">
+            <img
+              class="app-badge"
+              src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/google-play-badge.svg"
+              alt=""
+            />
+          </a>
+          <a href="#!" class="me-lg-3 mb-4 mb-lg-0">
+            <img
+              class="app-badge"
+              src="https://demo.onlyjs.com/exercises/bootstrap-mobile-app/assets/img/app-store-badge.svg"
+              alt=""
+            />
+          </a>
         </div>
       </div>
     </section>
@@ -392,6 +394,15 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
